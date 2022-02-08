@@ -1,0 +1,31 @@
+{
+  "name": "airport22",
+  "version": "1.0.0",
+  "description": "Programa Aeroporto em node e Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjcalmeida/Airport22.git"
+  },
+  "author": "Milton Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjcalmeida/Airport22/issues"
+  },
+  "homepage": "https://github.com/mjcalmeida/Airport22#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "http": "0.0.1-security",
+    "knex": "^0.95.15",
+    "mysql": "^2.18.1",
+    "net-tools": "^1.0.1",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

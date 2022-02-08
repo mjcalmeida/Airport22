@@ -1,0 +1,3 @@
+FROM 17-alpine3.12
+LABEL maintainer "MEBVL"
+EXPOSE 8080
