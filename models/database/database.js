@@ -1,13 +1,9 @@
-//host : 'mysql.ard.kinghost.net',
+const Sequelize = require("sequelize");
+//host: 'mysql.ard.kinghost.net',
+const conn = new Sequelize('ard', 'ard', 'Matrix05', {
+    host: 'mysql.ard.kinghost.net',
+    dialect: 'mysql',
+    timezone: '-03:00'     
+});
 
-var knex = require('knex')({
-    client: 'mysql',
-    connection: {
-      host : '127.0.0.1',
-      user : 'air',
-      password : 'Matrix05',
-      database : 'airport'
-    }
-  });
-  
-  module.exports = knex;
+module.exports = conn;

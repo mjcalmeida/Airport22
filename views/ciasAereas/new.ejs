@@ -1,0 +1,64 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+<link rel="stylesheet" href="/bootstrap-4.5.2-dist/css/bootstrap.css">
+<link rel="stylesheet" href="/css/estilo.css">
+
+<body>
+    <hr>
+    <div class="container">
+        <div class="card">
+            <div class="card-header"><h3>Incluir Compania Aérea</h3></div>
+            <div class="card-body">
+                <form method="POST" action="save">
+                    <div class="row">
+                        <div class="col mt-10"><label>Nome da Cia</label></div>
+                        <div class="col-9">
+                            <input type="text" placeholder="Digite o nome da Cia Aérea" name="Nome" class="form-control">
+                        </div>
+                    </div>
+  
+                    <div class="row">
+                        <div class="col mt-10"><label>Sigla</label></div>
+                        <div class="col-9">
+                            <input type="text" placeholder="Digite a Sigla da Compania Aérea" name="Sigla" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mt-10"><label>Som</label></div>
+                        <div class="col-9">
+                                <input type="text" placeholder="Arquivo de Voz" name="Som" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mt-10"><label>Logo</label></div>
+                        <div class="col-9">
+                                <input type="text" placeholder="Digite o local do Logo" name="Logo" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mt-10"><label>Ativo ?</label></div>
+                        <div class="col-9">
+                          <div style="align-items: flex-start;
+                                      background-color: #F1F1F1;
+                                      height: 43px;
+                                      border: 1px solid rgba(0, 0, 0, 0.125);
+                                      border-radius: 0.25rem;">
+                          <div class="roundedTwo" >
+                            <input type="checkbox" value="Ativo" id="roundedTwo" name="Ativo" checked />
+                            <label for="roundedTwo"></label>
+                          </div></div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <button class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+        </div>  
+    </div>
+</body>
+
+<%- include ('../partials/footer.ejs') %>

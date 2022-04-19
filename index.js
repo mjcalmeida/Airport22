@@ -7,12 +7,36 @@ const fs      = require('fs'); // Sistema de arquivos
 app.set('view engine', 'ejs');
 
 //Static
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
-app.get("/", function(req, res){
-    res.render("\Principal")
+//Body-parser
+app.use(express.urlencoded({
+    extended: false
+}));
+app.use(express.json());
+
+// Database
+conn
+.authenticate()
+.then(() => {
+    console.log("Conexão efetuada com sucesso!");
+})
+.catch((error) => {
+    console.log(error);
 });
 
+app.get("/", function(req, res){
+    res.render("\principal")
+});
+
+// Importando os Controllers
+const ciasAereasController  = require("./controllers/ciasAereasController");
+const aeroportosController  = require("./controllers/aeroportosController");
+const voosController  = require("./controllers/voosController");
+
+app.use(ciasAereasController);
+app.use(aeroportosController);
+app.use(voosController);
 
 app.listen(8080,function(erro){
     if(erro){

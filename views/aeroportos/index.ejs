@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+<link rel="stylesheet" href="/bootstrap-4.5.2-dist/css/bootstrap.css">
+<link rel="stylesheet" href="/css/estilo.css">
+
+<body>
+    <div class="container">
+        <hr>
+        <h2>Aeroportos</h2>
+        <a href="/aeroportos/new" class="btn btn-primary">Novo Aeroporto</a>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width:50%">Nome</th>                    
+                    <th style="width:10%">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% aeroportos.forEach(aeroporto => { %>
+                    <tr>                        
+                        <td> <%= aeroporto.Nome %> </td>                        
+                        <td style="text-align:center;"><button class="btn btn-warning">
+                            <a href="/aeroportos/edit/<%= aeroporto.id %>">Editar</a></button>
+
+                            <form method="POST" action="./aeroportos/delete" 
+                                style="display: inline;"
+                                onsubmit="confirmarDelecao(event, this)">                               
+                                <button class="btn btn-danger">Excluir</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<%- include ('../partials/footer.ejs') %>
+
+<script>
+    function confirmarDelecao(event, form){
+        event.preventDefault();
+        var decisao = confirm("Deseja excluir este Aeroporto?");
+
+        if (decisao){
+            form.submit();
+        }        
+    }
+</script>
